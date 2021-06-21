@@ -16,7 +16,7 @@ import { SPENDING_LIMIT_MODULE_ADDRESS } from 'src/utils/constants'
 import SpendingLimitModule from './artifacts/AllowanceModule.json'
 
 export const SENTINEL_ADDRESS = '0x0000000000000000000000000000000000000001'
-export const MULTI_SEND_ADDRESS = '0x8d29be29923b68abfdd21e541b9374737b49cdad'
+export const MULTI_SEND_ADDRESS = '0x663a65a0523103846a1761ab90a1a4731156c453'
 export const SAFE_MASTER_COPY_ADDRESS = '0x34CfAC646f301356fAa8B21e94227e3583Fe3F5F'
 export const DEFAULT_FALLBACK_HANDLER_ADDRESS = '0xd5D82B6aDDc9027B22dCA772Aa68D5d74cdBdF44'
 export const SAFE_MASTER_COPY_ADDRESS_V10 = '0xb6029EA3B2c51D09a50B53CA8012FeEB05bDa35A'
@@ -34,7 +34,7 @@ export const getGnosisSafeContract = (web3: Web3, networkId: ETHEREUM_NETWORK) =
   // TODO: this may not be the most scalable approach,
   //  but up until v1.2.0 the address is the same for all the networks.
   //  So, if we can't find the network in the Contract artifact, we fallback to MAINNET.
-  const contractAddress = networks[networkId]?.address ?? networks[ETHEREUM_NETWORK.MAINNET].address
+  const contractAddress = '0x2bb001433cf04c1f7d71e3c40fed66b2b563065e'
   return (new web3.eth.Contract(GnosisSafeSol.abi as AbiItem[], contractAddress) as unknown) as GnosisSafe
 }
 
@@ -48,7 +48,7 @@ const getProxyFactoryContract = (web3: Web3, networkId: ETHEREUM_NETWORK): Gnosi
   // TODO: this may not be the most scalable approach,
   //  but up until v1.2.0 the address is the same for all the networks.
   //  So, if we can't find the network in the Contract artifact, we fallback to MAINNET.
-  const contractAddress = networks[networkId]?.address ?? networks[ETHEREUM_NETWORK.MAINNET].address
+  const contractAddress = '0x7a32d4df6d7aff9b3b975452518b4be38d8f6d6f'
   return (new web3.eth.Contract(ProxyFactorySol.abi as AbiItem[], contractAddress) as unknown) as GnosisSafeProxyFactory
 }
 
